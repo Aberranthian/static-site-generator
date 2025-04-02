@@ -14,6 +14,9 @@ class TestHTMLNode(unittest.TestCase):
         self.assertFalse(
             node.tag or node.value or node.children
         )
+    def test_no_props_returns_empty(self):
+        node = HTMLNode("p", None, None, None)
+        self.assertEqual(node.props_to_html(), "")
 
 if __name__ == "__main__":
     unittest.main()
